@@ -1,0 +1,517 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin:0;
+  background-color: slategray;
+  font-family: 'Barlow', sans-serif;
+}
+main {
+  background-color: white;
+}
+canvas {
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1em;
+}
+/* header */
+.top-header {
+  width: 100%;
+  background: teal;
+  min-height: 30px;
+  color: white;
+  display: block;
+ 
+}
+.header-items {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+.top-header h1 {
+  margin: auto;
+  margin-left: 10px;
+  text-align: left;
+}
+.profile {
+  display: flex;
+  height: 75%;
+  margin: auto 0 10px;
+  padding-left: 5px;
+  border-left: 2px #006767 solid;
+}
+.top-header p, 
+.profile-pic, 
+.bell-icon {
+  display: inline-block;
+  margin: auto 5px;
+}
+
+/* notification bell */
+.bell-container {
+  position: relative;
+}
+.bell-icon {
+  margin-right: 10px;
+  margin-top: 15px;
+  position: relative;
+  display:inline-block;
+  transition: all .5s;
+}
+.bell-icon:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+.dot {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  top: 20px;
+  right: 10px;
+  border-radius: 50%;
+  background: rgba(255, 99, 132, 1);
+}
+
+/* Profile Pic */
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid teal;
+  transition: all .5s;
+  padding: 0;
+}
+
+.top-header p {
+  margin-right: 20px;
+  font-size: 90%;
+}
+
+/* Nav */
+.nav-container {
+  background-color: #004e4e;
+}
+.main-nav {
+  background-color: #004e4e;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.main-nav img {
+  width: 2.25rem;
+}
+.main-nav a {
+  padding: 1.1em;
+  margin: 0;
+}
+.main-nav a:active,
+.main-nav a:hover {
+  border-bottom: 3px solid rgba(255, 99, 132, 1);
+  border-radius: 2px;
+}
+
+/* Dashboard search line */
+
+.dash-search {
+  background-color: #F5F5F5;
+}
+.dash-search h2,
+.dash-search div {
+  display: inline-block;
+}
+.dash-search h2 {
+  text-align: center;
+  width: 25%;
+  margin: 0 auto 0 0;
+  padding-top: 25px;
+  background-color: white;
+  min-width: 200px;
+}
+.dash-search-area {
+  width: 90%;
+  margin-top: 10px;
+  display: inline-block;
+  text-align: left;
+  font-size: 1em;
+  color: black;
+  border-radius: 10%;
+  background: #fff;
+  border: none;
+}
+.dash-search-area:focus {
+  outline: none;
+}
+.dash-search-wrapper {
+  align-items: center;
+  height: 50px;
+  width: 90%;
+  max-width: 400px;
+  margin: 10px 10px 10px auto;
+  font-size: 1em;
+  color: black;
+  border-radius: 10%;
+  background: #fff;
+  border: none;
+  border-bottom: 4px solid #ccc;
+  border-radius: 6px;
+  padding: 5px;
+  
+}
+.search-glass {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+}
+
+/* Alert Banner */
+.alert-banner {
+  background-color: #004e4e;
+  margin: 25px auto;
+  width: 90%;
+  color: white;
+  border-radius: 6px;
+  max-width: 1200px;
+}
+.close-alert {
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: #004e4e;
+  font-size: small;
+  padding: 0;
+}
+.alert-banner p,
+.alert-banner button,
+.traffic h3,
+.traffic ul, 
+.traffic li {
+display: inline-block;
+}
+.alert-banner p {
+  width: 95%;
+  padding-left: 10px;
+}
+
+/* Traffic Chart */
+.traffic-title {
+  width: 95%;
+  margin: 0 auto 0 25px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+.traffic-list {
+  list-style-type: none;
+  padding: 0;
+  margin-left: auto;
+}
+.traffic-selector {
+  margin: 10px;
+  cursor: pointer;
+}
+.traffic-active {
+  background-color: teal;
+  border-radius: 15px;
+  color: white;
+  padding: 5px 15px;
+  transition: background-color .5s ease-in-out;
+  transition: color .5s;
+}
+
+/* Widget Styles */
+.widget-container-full {
+  padding: 1rem;
+}
+.widget-container-half {
+  padding: 1rem;
+}
+.daily-bar,
+.mobile-donut,
+.new-members,
+.recent-activity {
+  border: lightgray 1px solid;
+}
+.daily-bar h3,
+.mobile-donut h3 {
+  margin-left: 25px;
+}
+
+/* Social Styles */
+.social-wrap,
+.social-wrap img,
+.social-wrap div {
+  display: inline-block;
+}
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.social-wrap {
+  display: flex;
+  align-items: center;
+  background-color: #F5F5F5;
+  border: lightgray 1px solid;
+  border-radius: 6px;
+  width: 90%;
+  max-width: 350px;
+  margin: 1rem auto;
+}
+.social-icon {
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 99, 132, 1);
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.social-count {
+  font-size: 2.5em;
+  margin: 0 0 10px;
+}
+.social-title {
+  color: teal;
+  font-size: 1.1em;
+  margin: 10px 0 0;
+  font-weight: bold;
+}
+
+/* Feed Styles */
+.feed-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.recent-activity,
+.new-members,
+.social-container {
+  padding: 1em;
+}
+.members div {
+  margin-right: auto;
+}
+.feed-container p {
+  margin: 0;
+}
+.members,
+.activity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: lightgray 1px solid;
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 2.5%;
+  max-width: 600px;
+}
+.final-container {
+  border: none;
+}
+.activity {
+  font-size: 1em;
+}
+.activity p {
+  font-size: .9em;
+}
+.feed-date {
+  padding: 0;
+}
+.activity > p {
+  margin-left: auto;
+  font-size: .9em;
+}
+.email {
+  text-decoration: none;
+  color: teal;
+}
+
+/* Message Styles */
+.message-container,
+.settings-container {
+  padding: 1em;
+  border: lightgray 1px solid;
+}
+.message-container h3,
+.settings-container h3 {
+  margin: 0 0 1em;
+}
+.send-btn,
+.message-area,
+.search-area {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+  padding: .5rem;
+  border: solid 1px lightgray;
+  border-radius: 5px;
+  background: lightgray;
+  color: black;
+  max-width: 600px;
+}
+.search-area {
+  height: 50px;
+}
+.message-area {
+  height: 125px;
+}
+.send-btn {
+  background: teal;
+  color: white;
+  height: 50px;
+  font-size: 1em;
+}
+
+/* Toggles */
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  max-width: 600px;
+}
+.toggle-container p {
+  margin-right: 1.25em;
+}
+.toggle {
+  margin-left: auto;
+  display: inline-block;
+  height: 34px;
+  width: 100px;
+  position: relative;
+}
+.toggle input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.slider{ 
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: teal;
+  border-radius: 34px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider::before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider::after {
+  position: absolute;
+  content: 'ON';
+  font-size: .9em;
+  height: 15px;
+  width: 15px;
+  top: 8px;
+  left: 8px;
+  color: white;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(66px);
+  -ms-transform: translateX(66px);
+  transform: translateX(66px);
+}
+  
+/* Timezone Dropdown */ 
+
+.timezone-select {
+  width: 100%;
+  height: 40px;
+  background-color: lightgray;
+  border: solid 1px lightgray;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+/* save/cancel buttons */
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+}
+.save-btn,
+.cancel-btn {
+  width: 45%;
+  height: 50px;
+  border: solid 1px lightgray;
+  border-radius: 5px;
+  margin: 1.25em auto;
+}
+.save-btn {
+  background-color: teal;
+  color: white;
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 768px) {
+.search-glass {
+  height: 15px;
+  width: 15px;
+}
+.main-nav {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-nav a:active,
+.main-nav a:hover {
+  border-left: 3px solid rgba(255, 99, 132, 1);
+  border-bottom: none;
+  border-radius: 2px;
+}
+.alert-banner button{
+  font-size: large;
+}
+.social {
+  flex-direction: row;
+}
+.social h3 {
+  display: block;
+}
+.social-wrap {
+  margin: 0 1rem 1rem;
+  max-width: 350px;
+}
+}
+
+@media screen and (min-width: 1024px) {
+  .social {
+      justify-content: center;
+  }
+  .timezone-select {
+      max-width: 600px;
+  }
+  .form,
+  .settings-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .toggle-container {
+      width: 100%;
+  }
+}
